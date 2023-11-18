@@ -8,6 +8,7 @@ FetchContent_Declare(
 )
 FetchContent_GetProperties(pybind11)
 find_package(pybind11 "${MIN_PYBIND_VERSION}" CONFIG)
+find_package(Python3 3.7 REQUIRED COMPONENTS Interpreter Development)
 if((NOT pybind11_FOUND) AND (NOT pybind11_POPULATED)) # check first on system path, then attempt git fetch
   FetchContent_Populate(pybind11)
   add_subdirectory(${pybind11_SOURCE_DIR} ${pybind11_BINARY_DIR})

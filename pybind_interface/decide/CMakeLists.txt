@@ -32,7 +32,7 @@ if(has_nvcc STREQUAL "")
   else()
     list(APPEND CMAKE_MODULE_PATH "/opt/rocm/lib/cmake/hip")
     find_package(HIP REQUIRED)
-    find_package(PythonLibs 3.7 REQUIRED)
+    find_package(Python3 3.7 REQUIRED COMPONENTS Interpreter Development)
 
     include_directories(${PYTHON_INCLUDE_DIRS} ${pybind11_SOURCE_DIR}/include)
 
@@ -45,7 +45,7 @@ if(has_nvcc STREQUAL "")
     set_source_files_properties(decide.cpp PROPERTIES LANGUAGE HIP)
   endif()
 else()
-  find_package(PythonLibs 3.7 REQUIRED)
+  find_package(Python3 3.7 REQUIRED COMPONENTS Interpreter Development)
   find_package(CUDA REQUIRED)
 
   include_directories(${PYTHON_INCLUDE_DIRS} ${pybind11_SOURCE_DIR}/include)

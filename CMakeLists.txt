@@ -1,3 +1,4 @@
+set(CMAKE_CXX_STANDARD 11)
 cmake_minimum_required(VERSION 3.11)
 
 execute_process(COMMAND which nvcc OUTPUT_VARIABLE has_nvcc)

@@ -8,7 +8,7 @@ ELSE()
 ENDIF()
 
 INCLUDE(../GetPybind11.cmake)
-find_package(PythonLibs 3.7 REQUIRED)
+find_package(Python3 3.7 REQUIRED COMPONENTS Interpreter Development)
 
 list(APPEND CMAKE_MODULE_PATH "/opt/rocm/lib/cmake/hip")
 find_package(HIP REQUIRED)

@@ -15,7 +15,7 @@ if(APPLE)
 endif()
 
 INCLUDE(../GetPybind11.cmake)
-find_package(PythonLibs 3.7 REQUIRED)
+find_package(Python3 3.7 REQUIRED COMPONENTS Interpreter Development)
 find_package(CUDA REQUIRED)
 
 include_directories(${PYTHON_INCLUDE_DIRS} ${pybind11_SOURCE_DIR}/include)
