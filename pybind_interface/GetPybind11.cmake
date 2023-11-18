@@ -15,6 +15,7 @@ find_package(pybind11 "${MIN_PYBIND_VERSION}" CONFIG)
 message(STATUS "pybind11_FOUND: ${pybind11_FOUND}")
 message(STATUS "pybind11_VERSION: ${pybind11_VERSION}")
 message(STATUS "pybind11_INCLUDE_DIRS: ${pybind11_INCLUDE_DIRS}")
+message(STATUS "CMAKE_PREFIX_PATH: ${CMAKE_PREFIX_PATH}")
 
 include_directories(${pybind11_INCLUDE_DIRS})
 
