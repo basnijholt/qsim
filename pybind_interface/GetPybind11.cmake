@@ -16,6 +16,8 @@ message(STATUS "pybind11_FOUND: ${pybind11_FOUND}")
 message(STATUS "pybind11_VERSION: ${pybind11_VERSION}")
 message(STATUS "pybind11_INCLUDE_DIRS: ${pybind11_INCLUDE_DIRS}")
 
+include_directories(${pybind11_INCLUDE_DIRS})
+
 if((NOT pybind11_FOUND) AND (NOT pybind11_POPULATED))
   # If pybind11 is not found, fetch and add it
   FetchContent_Populate(pybind11)
