@@ -16,3 +16,4 @@ endif()
 
 INCLUDE(../GetPybind11.cmake)
 pybind11_add_module(qsim_sse pybind_main_sse.cpp)
+target_include_directories(qsim_sse PRIVATE ${pybind11_INCLUDE_DIRS})

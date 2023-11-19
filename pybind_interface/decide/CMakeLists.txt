@@ -29,6 +29,8 @@ INCLUDE(../GetPybind11.cmake)
 if(has_nvcc STREQUAL "")
   if(has_hipcc STREQUAL "")
     pybind11_add_module(qsim_decide decide.cpp)
+    target_include_directories(qsim_decide PRIVATE ${pybind11_INCLUDE_DIRS})
+
   else()
     list(APPEND CMAKE_MODULE_PATH "/opt/rocm/lib/cmake/hip")
     find_package(HIP REQUIRED)
