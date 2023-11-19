@@ -18,6 +18,7 @@ message(STATUS "pybind11_INCLUDE_DIRS: ${pybind11_INCLUDE_DIRS}")
 message(STATUS "CMAKE_PREFIX_PATH: ${CMAKE_PREFIX_PATH}")
 
 include_directories(${pybind11_INCLUDE_DIRS})
+include_directories("/home/bas_nijholt_ionq_co/micromamba/envs/py311/include")
 
 if((NOT pybind11_FOUND) AND (NOT pybind11_POPULATED))
   # If pybind11 is not found, fetch and add it
