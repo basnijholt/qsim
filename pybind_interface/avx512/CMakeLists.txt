@@ -16,4 +16,6 @@ endif()
 
 INCLUDE(../GetPybind11.cmake)
 pybind11_add_module(qsim_avx512 pybind_main_avx512.cpp)
+message(STATUS "pybind11 include directories: ${pybind11_INCLUDE_DIRS}")
+
 target_include_directories(qsim_avx512 PRIVATE ${pybind11_INCLUDE_DIRS})
