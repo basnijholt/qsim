@@ -92,9 +92,14 @@ class CMakeBuild(build_ext):
         subprocess.check_call(
             ["cmake", ext.sourcedir] + cmake_args, cwd=self.build_temp, env=env
         )
-        subprocess.check_call(
-            ["cmake", "--build", "."] + build_args, cwd=self.build_temp
-        )
+        try:
+            subprocess.check_call(
+                ["cmake", "--build", "."] + build_args, cwd=self.build_temp
+            )
+        except subprocess.CalledProcessError as e:
+            shutil.rmtree("build_cp")
+            shutil.copytree(self.build_temp, "build_cp")
+            raise
 
 
 requirements = open("requirements.txt").readlines()
@@ -114,7 +119,7 @@ setup(
     url="https://github.com/quantumlib/qsim",
     author="Vamsi Krishna Devabathini",
     author_email="devabathini92@gmail.com",
-    python_requires=">=3.7.0,<3.12.0",
+    python_requires=">=3.7.0",
     install_requires=requirements,
     extras_require={
         "dev": dev_requirements,
