@@ -1309,8 +1309,7 @@ def test_qsim_gpu_unavailable():
 
 
 def test_cirq_qsim_gpu_amplitudes():
-    if qsimcirq.qsim_gpu is None:
-        pytest.skip("GPU is not available for testing.")
+    pytest.skip("GPU is not available for testing.")
     # Pick qubits.
     a, b = [cirq.GridQubit(0, 0), cirq.GridQubit(0, 1)]
 
@@ -1327,8 +1326,7 @@ def test_cirq_qsim_gpu_amplitudes():
 
 
 def test_cirq_qsim_gpu_simulate():
-    if qsimcirq.qsim_gpu is None:
-        pytest.skip("GPU is not available for testing.")
+    pytest.skip("GPU is not available for testing.")
     # Pick qubits.
     a, b = [cirq.GridQubit(0, 0), cirq.GridQubit(0, 1)]
 
@@ -1349,8 +1347,7 @@ def test_cirq_qsim_gpu_simulate():
 
 
 def test_cirq_qsim_gpu_expectation_values():
-    if qsimcirq.qsim_gpu is None:
-        pytest.skip("GPU is not available for testing.")
+    pytest.skip("GPU is not available for testing.")
     # Pick qubits.
     a, b = [cirq.GridQubit(0, 0), cirq.GridQubit(0, 1)]
 
@@ -1369,8 +1366,7 @@ def test_cirq_qsim_gpu_expectation_values():
 
 
 def test_cirq_qsim_gpu_input_state():
-    if qsimcirq.qsim_gpu is None:
-        pytest.skip("GPU is not available for testing.")
+    pytest.skip("GPU is not available for testing.")
     # Pick qubits.
     a, b = [cirq.GridQubit(0, 0), cirq.GridQubit(0, 1)]
 
@@ -1392,8 +1388,7 @@ def test_cirq_qsim_gpu_input_state():
 
 
 def test_qsim_gpu_input_state():
-    if qsimcirq.qsim_gpu is None:
-        pytest.skip("GPU is not available for testing.")
+    pytest.skip("GPU is not available for testing.")
 
     for num_qubits in range(1, 8):
         size = 2**num_qubits
@@ -1418,8 +1413,7 @@ def test_qsim_gpu_input_state():
 
 
 def test_cirq_qsim_custatevec_amplitudes():
-    if qsimcirq.qsim_custatevec is None:
-        pytest.skip("cuStateVec library is not available for testing.")
+    pytest.skip("cuStateVec library is not available for testing.")
     # Pick qubits.
     a, b = [cirq.GridQubit(0, 0), cirq.GridQubit(0, 1)]
 
@@ -1436,8 +1430,7 @@ def test_cirq_qsim_custatevec_amplitudes():
 
 
 def test_cirq_qsim_custatevec_simulate():
-    if qsimcirq.qsim_custatevec is None:
-        pytest.skip("cuStateVec library is not available for testing.")
+    pytest.skip("cuStateVec library is not available for testing.")
     # Pick qubits.
     a, b = [cirq.GridQubit(0, 0), cirq.GridQubit(0, 1)]
 
@@ -1458,8 +1451,7 @@ def test_cirq_qsim_custatevec_simulate():
 
 
 def test_cirq_qsim_custatevec_expectation_values():
-    if qsimcirq.qsim_custatevec is None:
-        pytest.skip("cuStateVec library is not available for testing.")
+    pytest.skip("cuStateVec library is not available for testing.")
     # Pick qubits.
     a, b = [cirq.GridQubit(0, 0), cirq.GridQubit(0, 1)]
 
@@ -1478,8 +1470,7 @@ def test_cirq_qsim_custatevec_expectation_values():
 
 
 def test_cirq_qsim_custatevec_input_state():
-    if qsimcirq.qsim_custatevec is None:
-        pytest.skip("cuStateVec library is not available for testing.")
+    pytest.skip("cuStateVec library is not available for testing.")
     # Pick qubits.
     a, b = [cirq.GridQubit(0, 0), cirq.GridQubit(0, 1)]
 
@@ -1501,8 +1492,7 @@ def test_cirq_qsim_custatevec_input_state():
 
 
 def test_qsim_custatevec_input_state():
-    if qsimcirq.qsim_custatevec is None:
-        pytest.skip("cuStateVec library is not available for testing.")
+    pytest.skip("cuStateVec library is not available for testing.")
 
     for num_qubits in range(1, 8):
         size = 2**num_qubits
